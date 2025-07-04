@@ -1,0 +1,14 @@
+<html>
+    <head>
+        <title>Page TWO</title>
+    </head>
+    <body>
+        <p>Name:{{name}}</p>
+        <p>CGPA:{{cgpa}}</p>
+        <form method="post">
+            {% csrf_token%}
+            <input type="submit" value="Go back to page1">
+        </form>
+        
+    </body>
+</html>

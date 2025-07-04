@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Form</title>
+</head>
+<body>
+    <h2>Enter Student Details</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+
+    <h3>Entered Details:</h3>
+    <textarea rows="10" cols="70" readonly>{{ result }}</textarea>
+
+    {% if percentage %}
+        <p><strong>Total Percentage: </strong> {{ percentage }}%</p>
+    {% endif %}
+</body>
+</html>

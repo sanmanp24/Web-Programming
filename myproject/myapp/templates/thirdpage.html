@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title>Third Page</title>
+    </head>
+    <body>
+        <h2>Information:</h2>
+        <p><strong>Name:</strong>{{name}}</p>
+        <p><strong>Roll no:</strong>{{roll}}</p>
+        <p><strong>Subject:</strong>{{sub}}</p>
+        <form method="post">
+            {%csrf_token%}
+            <input type="submit" value="Back to FirstPage">
+        </form>
+    </body>
+</html>

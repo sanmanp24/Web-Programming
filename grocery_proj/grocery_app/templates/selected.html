@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Selected Items</title>
+    <style>
+        table, th, td {
+            border: 2px solid black;
+            border-collapse: collapse;
+            padding: 8px;
+        }
+        tfoot td {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>Selected Grocery Items</h2>
+    <table>
+        <tr>
+            <th>Item</th>
+            <th>Price (₹)</th>
+        </tr>
+        {% for item, price in selected_item.items %}
+        <tr>
+            <td>{{ item }}</td>
+            <td>{{ price }}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td><strong>Total</strong></td>
+            <td><strong>{{ total }}</strong></td>
+        </tr>
+    </table>
+    <br>
+    <a href="{% url 'grocery' %}">Back to Checklist</a>
+</body>
+</html>

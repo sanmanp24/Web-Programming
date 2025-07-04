@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Website Directory</title>
+</head>
+<body>
+    <h1>Website Directory</h1>
+    <h2>Categories:</h2>
+    <ul>
+        {% for cat in categories %}
+            <li>
+                {{ cat.name }} - Visits: {{ cat.visits }} | Likes: {{ cat.likes }}
+                <ul>
+                    {% for page in cat.page_set.all %}
+                        <li><a href="{{ page.url }}">{{ page.title }}</a> ({{ page.views }} views)</li>
+                    {% endfor %}
+                </ul>
+            </li>
+        {% endfor %}
+    </ul>
+    <br>
+    <a href="{% url 'add_page' %}">Add New Page</a>
+</body>
+</html>
